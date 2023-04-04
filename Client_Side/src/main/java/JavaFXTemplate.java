@@ -30,7 +30,6 @@ public class JavaFXTemplate extends Application {
 	     rect.setArcHeight(50);
 	     rect.setArcWidth(50);
 	     rect.setFill(Color.VIOLET);
-		 // This is testing 
 
 	     RotateTransition rt = new RotateTransition(Duration.millis(5000), rect);
 	     rt.setByAngle(270);
@@ -56,7 +55,6 @@ public class JavaFXTemplate extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		
-				
 		
 	}
 
