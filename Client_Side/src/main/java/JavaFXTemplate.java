@@ -46,6 +46,7 @@ public class JavaFXTemplate extends Application {
 	     ft.setToValue(0.3);
 	     ft.setCycleCount(4);
 	     ft.setAutoReverse(true);
+	     ft.settttt(false);
 
 	     ft.play();
 	     BorderPane root = new BorderPane();
