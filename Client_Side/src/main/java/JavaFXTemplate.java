@@ -55,7 +55,7 @@ public class JavaFXTemplate extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		
-		Hello thisis yash and this is test to see if its working.
+	
 	}
 
 }
