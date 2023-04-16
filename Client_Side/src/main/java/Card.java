@@ -1,8 +1,8 @@
 import java.io.Serializable;
 
 public class Card implements Serializable {
-	private final String suite;
-    private final int value;
+	private String suite;
+    private int value;
 
     public Card(String theSuite, int theValue){
         suite = theSuite;
@@ -13,6 +13,8 @@ public class Card implements Serializable {
         return value;
     }
 
-    public String getSuite() { return suite; }
+    public String getSuite() {
+    	return suite; 
+    }
 }
 
