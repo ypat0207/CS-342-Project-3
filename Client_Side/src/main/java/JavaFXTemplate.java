@@ -63,6 +63,7 @@ public class JavaFXTemplate extends Application {
 	private TextField ipAddressField = new TextField();
 	private TextField portNumberField = new TextField();
 	private Label statusLabel;
+	private Button showDealerCards;
 
 	Player playerOne = new Player();
 	Player playerTwo = new Player();
@@ -89,27 +90,7 @@ public class JavaFXTemplate extends Application {
        
 	}
 	
-	public void actionPerformed(ActionEvent e) {
-	      if (e.getSource() == connectButton) {
-	         int port = Integer.parseInt(portNumberField.getText());
-	         boolean isOpen = isPortOpen(port);
-	         if (isOpen) {
-	            statusLabel.setText("Port " + port + " is open");
-	         } else {
-	            statusLabel.setText("Port " + port + " is closed");
-	         }
-	      }
-	   }
-	public static boolean isPortOpen(int port) {
-	      try {
-	         Socket socket = new Socket();
-	         socket.connect(new InetSocketAddress("localhost", port), 1000);
-	         socket.close();
-	         return true;
-	      } catch (Exception ex) {
-	         return false;
-	      }
-	   }
+
 
 	//feel free to remove the starter code from this method
 	@Override
@@ -122,11 +103,11 @@ public class JavaFXTemplate extends Application {
 		char[] chars = {'c','d','h','s'};
 		Random rand = new Random();
 		Random randNum = new Random();
-		player1NumberCard1 = randNum.nextInt(12) + 1;
+		player1NumberCard1 = randNum.nextInt(52) + 1;
 		player1RandomCharCard1 = chars[rand.nextInt(chars.length)];
-		player1NumberCard2 = randNum.nextInt(12) + 1;
+		player1NumberCard2 = randNum.nextInt(52) + 1;
 		player1RandomCharCard2 = chars[rand.nextInt(chars.length)];
-		player1NumberCard3 = randNum.nextInt(12) + 1;
+		player1NumberCard3 = randNum.nextInt(52) + 1;
 		player1RandomCharCard3 = chars[rand.nextInt(chars.length)];
 		
 		
@@ -135,19 +116,19 @@ public class JavaFXTemplate extends Application {
 	    ImageView cardSceneImgViewPlayerDealer = new ImageView();
 		
 		
-		FileInputStream cardSceneBGPlayer1 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player1RandomCharCard1+"" + player1NumberCard1 +".png");
+		FileInputStream cardSceneBGPlayer1 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player1NumberCard1 +".png");
 		Image cardSceneImgPlayer1 = new Image(cardSceneBGPlayer1);
 	    ImageView cardSceneImgViewPlayer1 = new ImageView();
 	    cardSceneImgViewPlayer1.setFitWidth(75);
 	    cardSceneImgViewPlayer1.setFitHeight(75);
-	    FileInputStream cardSceneBG2Player1 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player1RandomCharCard2+"" + player1NumberCard2 +".png");
+	    FileInputStream cardSceneBG2Player1 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player1NumberCard2 +".png");
 		Image cardSceneImgPlayer = new Image(cardSceneBG2Player1);
 	    ImageView cardSceneImgViewPlayer = new ImageView();
 	    cardSceneImgViewPlayer.setTranslateX(-20);
 	    cardSceneImgViewPlayer.setLayoutY(20);
 	    cardSceneImgViewPlayer.setFitWidth(75);
 	    cardSceneImgViewPlayer.setFitHeight(75);	    
-	    FileInputStream cardSceneBG2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player1RandomCharCard3+"" + player1NumberCard3 +".png");
+	    FileInputStream cardSceneBG2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player1NumberCard3 +".png");
 		Image cardSceneImg2 = new Image(cardSceneBG2);
 	    ImageView cardSceneImgViewPlayer11 = new ImageView();
 	    cardSceneImgViewPlayer11.setTranslateX(-40);
@@ -157,25 +138,25 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer.setImage(cardSceneImgPlayerDealer);
 	    cardSceneImgViewPlayer11.setImage(cardSceneImgPlayerDealer);
 		
-		int player2NumberCard1 = randNum.nextInt(12) + 1;
+		int player2NumberCard1 = randNum.nextInt(52) + 1;
 		char player2RandomCharCard1 = chars[rand.nextInt(chars.length)];
-		int player2NumberCard2 = randNum.nextInt(12) + 1;
+		int player2NumberCard2 = randNum.nextInt(52) + 1;
 		char player2RandomCharCard2 = chars[rand.nextInt(chars.length)];
-		int player2NumberCard3 = randNum.nextInt(12) + 1;
+		int player2NumberCard3 = randNum.nextInt(52) + 1;
 		char player2RandomCharCard3 = chars[rand.nextInt(chars.length)];
-		FileInputStream cardSceneBGPlayer2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player2RandomCharCard1+"" + player2NumberCard1 +".png");
+		FileInputStream cardSceneBGPlayer2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard1 +".png");
 		Image cardSceneImgPlayer2 = new Image(cardSceneBGPlayer2);
 	    ImageView cardSceneImgViewPlayer2 = new ImageView();	   
 	    cardSceneImgViewPlayer2.setFitWidth(75);
 	    cardSceneImgViewPlayer2.setFitHeight(75);
-	    FileInputStream cardSceneBG2Player2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player2RandomCharCard2+"" + player2NumberCard2 +".png");
+	    FileInputStream cardSceneBG2Player2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard2 +".png");
 		Image cardSceneImgPlayer22 = new Image(cardSceneBG2Player2);
 	    ImageView cardSceneImgViewPlayer22 = new ImageView();
 	    cardSceneImgViewPlayer22.setTranslateX(-20);
 	    cardSceneImgViewPlayer22.setLayoutY(20);
 	    cardSceneImgViewPlayer22.setFitWidth(75);
 	    cardSceneImgViewPlayer22.setFitHeight(75);	    
-	    FileInputStream cardSceneBG22 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player2RandomCharCard3+"" + player2NumberCard3 +".png");
+	    FileInputStream cardSceneBG22 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard3 +".png");
 		Image cardSceneImg22 = new Image(cardSceneBG22);
 	    ImageView cardSceneImgViewPlayer111 = new ImageView();
 	    cardSceneImgViewPlayer111.setTranslateX(-40);
@@ -186,18 +167,18 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer111.setImage(cardSceneImgPlayerDealer);
 	    
 	    
-	    int player3NumberCard1 = randNum.nextInt(12) + 1;
+	    int player3NumberCard1 = randNum.nextInt(52) + 1;
 		char player3RandomCharCard1 = chars[rand.nextInt(chars.length)];
-		int player3NumberCard2 = randNum.nextInt(12) + 1;
+		int player3NumberCard2 = randNum.nextInt(52) + 1;
 		char player3RandomCharCard2 = chars[rand.nextInt(chars.length)];
-		int player3NumberCard3 = randNum.nextInt(12) + 1;
+		int player3NumberCard3 = randNum.nextInt(52) + 1;
 		char player3RandomCharCard3 = chars[rand.nextInt(chars.length)];
-		FileInputStream cardSceneBGPlayer3 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player3RandomCharCard1+"" + player3NumberCard1 +".png");
+		FileInputStream cardSceneBGPlayer3 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player3NumberCard1 +".png");
 		Image cardSceneImgPlayer3 = new Image(cardSceneBGPlayer3);
 	    ImageView cardSceneImgViewPlayer3 = new ImageView();
 	    cardSceneImgViewPlayer3.setFitWidth(75);
 	    cardSceneImgViewPlayer3.setFitHeight(75);
-	    FileInputStream cardSceneBG2Player3 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player3RandomCharCard2+"" + player3NumberCard2 +".png");
+	    FileInputStream cardSceneBG2Player3 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player3NumberCard2 +".png");
 		Image cardSceneImgPlayer33 = new Image(cardSceneBG2Player3);
 	    ImageView cardSceneImgViewPlayer33 = new ImageView();
 	    cardSceneImgViewPlayer33.setTranslateX(-20);
@@ -205,7 +186,7 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer33.setFitWidth(75);
 	    cardSceneImgViewPlayer33.setFitHeight(75);
 	    
-	    FileInputStream cardSceneBG33 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player3RandomCharCard3+"" + player3NumberCard3 +".png");
+	    FileInputStream cardSceneBG33 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player3NumberCard3 +".png");
 		Image cardSceneImg33 = new Image(cardSceneBG33);
 	    ImageView cardSceneImgViewPlayer333 = new ImageView();
 	    cardSceneImgViewPlayer333.setTranslateX(-40);
@@ -216,19 +197,19 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer333.setImage(cardSceneImgPlayerDealer);
 	    
 	    
-	    int player4NumberCard1 = randNum.nextInt(12) + 1;
+	    int player4NumberCard1 = randNum.nextInt(52) + 1;
 		char player4RandomCharCard1 = chars[rand.nextInt(chars.length)];
-		int player4NumberCard2 = randNum.nextInt(12) + 1;
+		int player4NumberCard2 = randNum.nextInt(52) + 1;
 		char player4RandomCharCard2 = chars[rand.nextInt(chars.length)];
-		int player4NumberCard3 = randNum.nextInt(12) + 1;
+		int player4NumberCard3 = randNum.nextInt(52) + 1;
 		char player4RandomCharCard3 = chars[rand.nextInt(chars.length)];
-		FileInputStream cardSceneBGPlayer4 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player4RandomCharCard1+"" + player4NumberCard1 +".png");
+		FileInputStream cardSceneBGPlayer4 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player4NumberCard1 +".png");
 		Image cardSceneImgPlayer4 = new Image(cardSceneBGPlayer4);
 	    ImageView cardSceneImgViewPlayer4 = new ImageView();	   
 
 	    cardSceneImgViewPlayer4.setFitWidth(75);
 	    cardSceneImgViewPlayer4.setFitHeight(75);
-	    FileInputStream cardSceneBG2Player4 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player4RandomCharCard2+"" + player4NumberCard2 +".png");
+	    FileInputStream cardSceneBG2Player4 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player4NumberCard2 +".png");
 		Image cardSceneImgPlayer44 = new Image(cardSceneBG2Player4);
 	    ImageView cardSceneImgViewPlayer44 = new ImageView();	    
 	    cardSceneImgViewPlayer44.setTranslateX(-20);
@@ -236,7 +217,7 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer44.setFitWidth(75);
 	    cardSceneImgViewPlayer44.setFitHeight(75);
 	    
-	    FileInputStream cardSceneBG44 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+player4RandomCharCard3+"" + player4NumberCard3 +".png");
+	    FileInputStream cardSceneBG44 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player4NumberCard3 +".png");
 		Image cardSceneImg44 = new Image(cardSceneBG44);
 	    ImageView cardSceneImgViewPlayer444 = new ImageView();	    
 	    cardSceneImgViewPlayer444.setTranslateX(-40);
@@ -245,6 +226,27 @@ public class JavaFXTemplate extends Application {
 	    cardSceneImgViewPlayer4.setImage(cardSceneImgPlayerDealer);
 	    cardSceneImgViewPlayer44.setImage(cardSceneImgPlayerDealer);
 	    cardSceneImgViewPlayer444.setImage(cardSceneImgPlayerDealer);
+	    
+	    
+	    int dealerCard1 = randNum.nextInt(52) + 1;
+		int dealerCard2 = randNum.nextInt(52) + 1;
+		int dealerCard3 = randNum.nextInt(52) + 1;
+		FileInputStream dealerCardInput = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard1 +".png");
+		Image dealerCardImg = new Image(dealerCardInput);
+	    ImageView dealerCardImgView = new ImageView();	   
+	    cardSceneImgViewPlayer2.setFitWidth(75);
+	    cardSceneImgViewPlayer2.setFitHeight(75);
+	    FileInputStream dealerCardInput2 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard2 +".png");
+		Image dealerCardImg2 = new Image(dealerCardInput2);
+	    ImageView dealerCardImgView2 = new ImageView();
+	    cardSceneImgViewPlayer22.setTranslateX(-20);
+	    cardSceneImgViewPlayer22.setLayoutY(20);
+	    cardSceneImgViewPlayer22.setFitWidth(75);
+	    cardSceneImgViewPlayer22.setFitHeight(75);	    
+	    FileInputStream dealerCardInput3 = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/"+"" + player2NumberCard3 +".png");
+		Image dealerCardImg3 = new Image(dealerCardInput3);
+	    ImageView dealerCardImgView3 = new ImageView();
+	    
 	    
 	    FileInputStream dealer = new FileInputStream("/Users/yash/Desktop/CS-342/CS-342-Project-3/Client_Side/src/main/resources/images/dealer1-removebg-preview.png");
 		Image dealerImg = new Image(dealer);
@@ -355,6 +357,7 @@ public class JavaFXTemplate extends Application {
 	    });
 	    playWagerPlayerOne.setOnAction(e->{
 	    	playWagerPlayerOne.setDisable(true);
+	    	showDealerCards.setDisable(false);
 	    });
 	    playerOneFold.setOnAction(e->{
 	    	wagerField.setDisable(true);
@@ -408,6 +411,7 @@ public class JavaFXTemplate extends Application {
 	    });
 	    playWagerPlayerTwo.setOnAction(e->{
 	    	playWagerPlayerTwo.setDisable(true);
+	    	showDealerCards.setDisable(false);
 	    });
 	    playerTwoFold.setOnAction(e->{
 	    	wagerField2.setDisable(true);
@@ -452,6 +456,7 @@ public class JavaFXTemplate extends Application {
 	    });
 	    playWagerPlayerThree.setOnAction(e->{
 	    	playWagerPlayerThree.setDisable(true);
+	    	showDealerCards.setDisable(false);
 	    });
 	    playerThreeFold.setOnAction(e->{
 	    	wagerField3.setDisable(true);
@@ -498,6 +503,7 @@ public class JavaFXTemplate extends Application {
 	    });
 	    playWagerPlayerFour.setOnAction(e->{
 	    	playWagerPlayerFour.setDisable(true);
+	    	showDealerCards.setDisable(false);
 	    });
 	    playerFourFold.setOnAction(e->{
 	    	wagerField4.setDisable(true);
@@ -524,7 +530,17 @@ public class JavaFXTemplate extends Application {
 	    showCards.setTranslateX(220);
 	    showCards.setTranslateY(200);
 	    
+	    showDealerCards = new Button("Show Dealer Cards");
+	    showDealerCards.setTranslateX(330);
+	    showDealerCards.setTranslateY(173);
+	    showDealerCards.setDisable(true);
 	    
+	    
+	    showDealerCards.setOnAction(e-> {
+	    	cardSceneImgViewPlayerDealer.setImage(dealerCardImg);
+	    	cardSceneImgViewPlayerDealerr.setImage(dealerCardImg2);
+	    	cardSceneImgViewPlayerDealerrr.setImage(dealerCardImg3);
+	    });
 	  
 	    MenuBar menuBar = new MenuBar();
 	    Menu fileMenu = new Menu("Options");
@@ -547,7 +563,7 @@ public class JavaFXTemplate extends Application {
 	   borderPane.setTop(menuBar);
 	    
 	    
-		VBox secondScene = new VBox(dealerVBox,showCards);
+		VBox secondScene = new VBox(dealerVBox,showCards,showDealerCards);
 		HBox playerOneAndTwo = new HBox(player1Vbox,player2Vbox);
 	
 		borderPane.setCenter(secondScene);
@@ -659,7 +675,7 @@ public class JavaFXTemplate extends Application {
 
 	    
 	     
-			primaryStage.setScene(scene);
+			primaryStage.setScene(scene2);
 			primaryStage.show();
 		
 	
